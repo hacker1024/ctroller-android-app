@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             Start().execute(applicationInfo.nativeLibraryDir)
             findViewById<Button>(R.id.start_button).text = "STOP CTROLLER"
         } else if (findViewById<Button>(R.id.start_button).text == "STOP CTROLLER") {
-            Shell.SU.run("killall ctroller.so")
+            Shell.SU.run("echo \$(ps | grep lib_ctroller_.so) | cut -d' ' -f2 | xargs kill")
             findViewById<Button>(R.id.start_button).text = "START CTROLLER"
         }
     }
