@@ -74,3 +74,5 @@ gradle/
 
 app/release/
 app/build/
+.gitignore.old
+app/.externalNativeBuild/cmake
