@@ -33,6 +33,6 @@ class AboutActivity : AppCompatActivity() {
         CTROLLER_BINARY_VERSION = when (is64bit) {true -> CTROLLER_BINARY_VERSION_ARM64; false -> CTROLLER_BINARY_VERSION_ARM}
 
         val versionTextTiew = findViewById<TextView>(R.id.textView4)
-        versionTextTiew.text = Html.fromHtml("<b>App:</b> ${BuildConfig.VERSION_NAME}<br><b>CTROLLER Version:</b> $CTROLLER_BINARY_VERSION")
+        versionTextTiew.text = Html.fromHtml("<b>App:</b> ${BuildConfig.VERSION_NAME}<br><b>CTROLLER version:</b> $CTROLLER_BINARY_VERSION")
     }
 }
