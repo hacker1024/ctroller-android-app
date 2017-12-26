@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">CTROLLER</string>
     <string name="description">Press button to start and stop CTROLLER. YOU MUST BE ROOTED AND HAVE A KERNEL WITH UINPUT ENABLED.</string>
+    <string name="about_title">About CTROLLER for Android</string>
+    <string name="main_title">CTROLLER for Android</string>
+    <string name="about_header">What is CTROLLER for Android?</string>
+    <string name="about_description">CTROLLER for Android is a port of phijor\'s CTROLLER app for linux to android. It allows you to use your Nintendo 3DS as a game controller for android.</string>
+    <string name="about_version_header">Versions:</string>
 </resources>
