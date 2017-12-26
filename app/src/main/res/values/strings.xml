@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CTROLLER</string>
+    <string name="description">Press button to start and stop CTROLLER. YOU MUST BE ROOTED AND HAVE A KERNEL WITH UINPUT ENABLED.</string>
+</resources>
