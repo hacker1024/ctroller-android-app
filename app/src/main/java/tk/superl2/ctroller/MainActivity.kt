@@ -10,7 +10,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import eu.chainfire.libsuperuser.Shell
-import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
