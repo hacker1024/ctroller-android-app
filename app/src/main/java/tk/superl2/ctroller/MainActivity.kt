@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import eu.chainfire.libsuperuser.Shell
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,24 +30,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private lateinit var libDir: String
-
+    private lateinit var startButton: TextView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.start_button).setOnClickListener(this)
+        startButton = findViewById<Button>(R.id.start_button)
+        startButton.setOnClickListener(this)
 
         findViewById<TextView>(R.id.ip_message).text = "";
+
+        if (!Shell.SU.run("ps | grep lib_ctroller_.so").isEmpty()) startButton.text = "STOP CTROLLER"
     }
 
     override fun onClick(v: View) {
         if (findViewById<Button>(R.id.start_button).text == "START CTROLLER") {
             Start().execute(applicationInfo.nativeLibraryDir)
-            findViewById<Button>(R.id.start_button).text = "STOP CTROLLER"
+            startButton.text = "STOP CTROLLER"
         } else if (findViewById<Button>(R.id.start_button).text == "STOP CTROLLER") {
             Shell.SU.run("echo \$(ps | grep lib_ctroller_.so) | cut -d' ' -f2 | xargs kill")
-            findViewById<Button>(R.id.start_button).text = "START CTROLLER"
+            startButton.text = "START CTROLLER"
         }
     }
 }
