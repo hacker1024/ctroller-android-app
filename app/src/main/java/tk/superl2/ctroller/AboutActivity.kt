@@ -11,8 +11,8 @@ import java.io.IOException
 
 class AboutActivity : AppCompatActivity() {
     var is64bit: Boolean = false;
-    private val CTROLLER_BINARY_VERSION_ARM = "android-0.1.0 (ARM)"
-    private val CTROLLER_BINARY_VERSION_ARM64 = "android-0.1.1 (ARM64)"
+    private val CTROLLER_BINARY_VERSION_ARM = "android-0.1.2 (ARM)"
+    private val CTROLLER_BINARY_VERSION_ARM64 = "android-0.1.2 (ARM64)"
     private lateinit var CTROLLER_BINARY_VERSION: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
