@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(Intent(this, AboutActivity::class.java))
                 true;
             }
+            R.id.settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
+                true;
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

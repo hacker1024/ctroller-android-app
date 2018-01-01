@@ -6,4 +6,9 @@
         android:icon="@android:drawable/ic_dialog_info"
         android:title="About"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Keymap"
+        app:showAsAction="never" />
 </menu>

@@ -6,4 +6,5 @@
     <string name="about_header">What is CTROLLER for Android?</string>
     <string name="about_description">CTROLLER for Android is a port of phijor\'s CTROLLER app for linux to android. It allows you to use your Nintendo 3DS as a game controller for android.</string>
     <string name="about_version_header">Versions:</string>
+    <string name="settings_title">CTROLLER keymap</string>
 </resources>
