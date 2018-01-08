@@ -1,19 +1,19 @@
 package tk.superl2.ctroller
 
+import android.annotation.SuppressLint
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.widget.TextView
+import eu.chainfire.libsuperuser.Shell
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
 
 
 class AboutActivity : AppCompatActivity() {
-    var is64bit: Boolean = false;
-    private val CTROLLER_BINARY_VERSION_ARM = "android-0.1.2 (ARM)"
-    private val CTROLLER_BINARY_VERSION_ARM64 = "android-0.1.2 (ARM64)"
-    private lateinit var CTROLLER_BINARY_VERSION: String
+    private var is64bit: Boolean = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +30,19 @@ class AboutActivity : AppCompatActivity() {
             is64bit = true
         }
 
-        CTROLLER_BINARY_VERSION = when (is64bit) {true -> CTROLLER_BINARY_VERSION_ARM64; false -> CTROLLER_BINARY_VERSION_ARM}
+        val versionTextView = findViewById<TextView>(R.id.versions_textview)
+        versionTextView.text = Html.fromHtml("<b>App:</b> ${BuildConfig.VERSION_NAME}<br><b>CTROLLER version:</b> Getting version, please wait...")
+        GetCtrollerVersion(applicationInfo.nativeLibraryDir, versionTextView, is64bit).execute()
+    }
+}
 
-        val versionTextTiew = findViewById<TextView>(R.id.textView4)
-        versionTextTiew.text = Html.fromHtml("<b>App:</b> ${BuildConfig.VERSION_NAME}<br><b>CTROLLER version:</b> $CTROLLER_BINARY_VERSION")
+@SuppressLint("StaticFieldLeak")
+class GetCtrollerVersion(private val nativeLibraryDir: String, private val versionTextView: TextView, private val is64bit: Boolean): AsyncTask<Unit, Unit, String>() {
+    override fun doInBackground(vararg params: Unit): String {
+        return Shell.SU.run("$nativeLibraryDir/lib_ctroller_.so --version")[0]
+    }
+
+    override fun onPostExecute(result: String?) {
+        versionTextView.text = Html.fromHtml("<b>App:</b> ${BuildConfig.VERSION_NAME}<br><b>CTROLLER version:</b> $result ${if (is64bit) "(ARM64)" else "(ARM)"}")
     }
 }
