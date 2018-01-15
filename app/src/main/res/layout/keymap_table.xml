@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/keymap_table"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <TableRow
+        android:id="@+id/keymap_table_row"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/keymap_original_label"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_weight="50"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/keymap_arrow"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_weight="10"
+            android:gravity="center_vertical"
+            android:text="->"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:typeface="monospace" />
+
+        <TextView
+            android:id="@+id/keymap_mapped_label"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_weight="50"
+            android:gravity="center_vertical"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:typeface="normal" />
+    </TableRow>
+</TableLayout>

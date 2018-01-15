@@ -6,17 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TableLayout
+        android:id="@+id/settings_keymap_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:stretchColumns="1">
+
+        <TableRow
+            android:id="@+id/settings_keymap_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EEEEEE"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp">
+
+            <TextView
+                android:id="@+id/settings_keymap_header_left_textview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center"
+                android:text="3DS"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+            <TextView
+                android:id="@+id/settings_keymap_header_arrow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:gravity="center"
+                android:text="->"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <TextView
+                android:id="@+id/settings_keymap_header_right_textview"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="50"
+                android:gravity="center"
+                android:text="Android"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceListItem"
+                android:textStyle="bold"
+                android:typeface="normal" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/settings_keymap_list_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/keymap_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="100"
+                android:scrollbars="vertical"
+                tools:layout_editor_absoluteX="217dp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/message_keymap_untoggled"
+        android:layout_width="306dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        android:switchPadding="20dp"
-        android:text="@string/switch_label_custom_keymap"
-        android:textSize="24sp"
+        android:layout_marginTop="8dp"
+        android:text="@string/message_keymap_untoggled"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
